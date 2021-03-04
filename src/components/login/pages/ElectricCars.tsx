@@ -14,7 +14,7 @@ interface details{
 
 const ElectricCars = () => {
     const[details,setdetails] = useState(useSelector((state: any) => {
-        return state.cardetails;
+        return state.container.cardetails;
     }));
 
     
@@ -69,7 +69,7 @@ const ElectricCars = () => {
                 {
                     details.map((detail: any) => {
                         return (
-                            <CarCards detail={detail} />
+                            <CarCards detail={detail} key = {detail.id} />
                         )
                     })
                 }
