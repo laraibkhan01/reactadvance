@@ -1,3 +1,4 @@
+import {AddCart} from '../constant/types'
 const initialState = {
     cardetails :[
         {
@@ -97,7 +98,7 @@ const initialState = {
 
 export const carReducer = (state : any = initialState,action : any) => {
     switch(action.type){
-        case "AddCart":
+        case AddCart:
             return {
                 ...state,
                 carBooked : [action.payload,...state.carBooked]
