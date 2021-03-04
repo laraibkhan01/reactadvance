@@ -5,14 +5,8 @@ import imag2 from '../assets/car2.png'
 import imag3 from '../assets/car3.png'
 import './CarCardsCss.css'
 import { useDispatch } from "react-redux"
-import { addCart } from '../actions/addCartActions'
 const CarCards = ({ detail }: any) => {
     const dispatch = useDispatch();
-    const bookCar = (e: any) => {
-        e.preventDefault();
-        const new_Car = detail;
-        dispatch(addCart(new_Car));
-    }
     return (
         <div className="CarCards-Wrapper">
             <div id="grid-area-1">
@@ -25,7 +19,6 @@ const CarCards = ({ detail }: any) => {
             </div>
             <div id="grid-area-3">
                 <Link id="CarCard-Explore" to={`/explore/${detail.id}`}>Explore</Link>
-                <button type="submit" onClick={(e: any) => bookCar(e)}>Add To Cart</button>
             </div>
         </div>
     )

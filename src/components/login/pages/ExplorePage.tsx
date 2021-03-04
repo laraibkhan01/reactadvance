@@ -1,21 +1,35 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams , useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCard } from '../actions/addCartActions';
 import imag from '../assets/car1.png'
 import imag2 from '../assets/car2.png'
 import imag3 from '../assets/car3.png'
 import './ExplorePage.css'
+import { addCart } from '../actions/addCartActions'
+
 interface ParamTypes {
     id: string;
 }
+
 export const ExplorePage = () => {
     let { id } = useParams<ParamTypes>();
+    let history = useHistory();
+
     const dispatch = useDispatch();
     const ExploreCard = useSelector((state: any) => state.container.carddetail);
     useEffect(() => {
         dispatch(getCard(id));
-    }, []);
+    }, [dispatch, id]);
+
+    const dispatch2 = useDispatch();
+    const bookCar = (e: any) => {
+        e.preventDefault();
+        const new_Car = ExploreCard;
+        dispatch2(addCart(new_Car));
+        history.push("/mybooking");
+    }
+
     return (
         <div className="ExplorePageWrapper">
             <div className="Car-Hardware">
@@ -44,7 +58,7 @@ export const ExplorePage = () => {
             <div className="Car-Software">
                 <p>{ExploreCard.name}</p>
                 <div className="Car-Subscription-box">
-                    <p id = "txt">Min. Subscription Length</p>
+                    <p id="txt">Min. Subscription Length</p>
                     <div className="Temp">
                         <button type="button" className="Explore-btn">1-month</button>
                         <button type="button" className="Explore-btn">6-months</button>
@@ -63,7 +77,7 @@ export const ExplorePage = () => {
                     <input type="date" id="delivery" name="delivery"></input>
                 </div>
                 <div className="Book-Now-Box">
-                    <button type="button" className="Explore-btn">Book Now</button>
+                    <button type="submit" className="Explore-btn" onClick={(e: any) => bookCar(e)}>Add To Cart</button>
                 </div>
             </div>
         </div>
