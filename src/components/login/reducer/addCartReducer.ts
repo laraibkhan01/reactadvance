@@ -1,4 +1,4 @@
-import {AddCart} from '../constant/types'
+import {AddCart, GetCard} from '../constant/types'
 const initialState = {
     cardetails :[
         {
@@ -12,7 +12,7 @@ const initialState = {
         },
         {
             "id" : 2,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "Nissan Leaf 30kWh",
             "speed" : "20km",
             "image" : 3,
             "Efficiency" : "17kWh",
@@ -21,7 +21,7 @@ const initialState = {
         },
         {
             "id" : 3,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "MG ZS EV (Excite) 45kWh",
             "speed" : "20km",
             "image" : 2,
             "Efficiency" : "17kWh",
@@ -30,7 +30,7 @@ const initialState = {
         },
         {
             "id" : 4,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "Nissan Leaf 30kWh",
             "speed" : "20km",
             "image" : 3,
             "Efficiency" : "17kWh",
@@ -39,7 +39,7 @@ const initialState = {
         },
         {
             "id" : 5,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "MG ZS EV (Excite) 45kWh",
             "speed" : "20km",
             "image" : 2,
             "Efficiency" : "17kWh",
@@ -57,7 +57,7 @@ const initialState = {
         },
         {
             "id" : 7,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "MG ZS EV (Excite) 45kWh",
             "speed" : "20km",
             "image" : 2,
             "Efficiency" : "17kWh",
@@ -66,7 +66,7 @@ const initialState = {
         },
         {
             "id" : 8,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "Nissan Leaf 30kWh",
             "speed" : "20km",
             "image" : 3,
             "Efficiency" : "17kWh",
@@ -84,7 +84,7 @@ const initialState = {
         },
         {
             "id" : 10,
-            "name" : "Renault ZOE ZE50 R135 GT Line (rapid) 52kWh",
+            "name" : "Nissan Leaf 30kWh",
             "speed" : "20km",
             "image" : 3,
             "Efficiency" : "17kWh",
@@ -93,7 +93,14 @@ const initialState = {
         },
         
     ],
-    carBooked :[]
+    carBooked :[
+        
+    ],
+    carddetail : [{
+        "id" : 1,
+        "name" : "MG ZS EV (Excite) 45kWh",
+    },
+],
 }
 
 export const carReducer = (state : any = initialState,action : any) => {
@@ -103,6 +110,16 @@ export const carReducer = (state : any = initialState,action : any) => {
                 ...state,
                 carBooked : [action.payload,...state.carBooked]
             };
+        case GetCard:
+            let arr = state.cardetails.filter((c:any) =>  c.id == action.payload);
+            arr = arr.values();
+            for(let val of arr){
+                arr = val;
+            }
+            return {
+                ...state,
+                carddetail : arr,
+            }
         default:
         return state;
     }

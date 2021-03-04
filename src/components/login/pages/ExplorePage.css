@@ -1,0 +1,66 @@
+.ExplorePageWrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    justify-content: space-around;
+}
+
+.Car-Hardware {
+    display: flex;
+    flex-direction: column;
+}
+
+.Car-info-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    font-weight: bold;
+}
+
+.Car-info-2 {
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: large;
+    color: #FF7BAC;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000000;
+}
+
+.Car-Software {
+    padding: 2%;
+    background: #FFFFFF;
+    border: 1px solid #FF7BAC;
+    box-sizing: border-box;
+    box-shadow: 11px 12px 4px rgba(255, 123, 172, 0.25);
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Car-Subscription-box, .Miles-per-month-box, .Delivery-date-box, .Book-Now-Box {
+    margin : 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size:xx-small;
+    font-weight: bolder;
+}
+.Temp{
+    display: flex;
+    flex-direction: row;
+}
+.Explore-btn {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: medium;
+    color: #FFFFFF;
+    background: #FF7BAC;
+    margin: 2%;
+}
