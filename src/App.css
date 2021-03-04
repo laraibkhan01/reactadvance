@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+body {
+  background-color: lightgrey;
+  align-items: center;
+  vertical-align: bottom;
+}
+.login-form-container {
+  margin: auto;
+  margin-top: 10%;
+  width: 50vw;
+  padding: 5vw 2vw;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.form-label {
+  float: left;
+  font-weight: bold;
+}

@@ -1,0 +1,30 @@
+.ElectricCar-List{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #E5E5E5;
+}
+.ElectricCar-Page-Wrapper{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #ffffff;
+}
+.ElectricCar-Page-Search{
+    border: 3px solid tomato;
+    /* margin: 1%; */
+}
+.ElectricCar-Page-Sort{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* margin: 1%; */
+}
+.Sorting{
+    border: none;
+    margin : 2%;
+}

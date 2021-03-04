@@ -1,0 +1,40 @@
+.navbar-css{
+    display: grid;
+    grid-template-columns: 2fr .5fr .5fr .5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "nav-grid-area-1 nav-grid-area-2 nav-grid-area-3 nav-grid-area-4";
+    justify-content: space-between;
+    margin : .5%;
+    background-color: #FFFFFF;
+    align-items: center;
+    box-shadow: 11px 12px 4px rgba(250, 223, 229, 0.25);
+}
+.VmBtn1{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.nav-grid-area-1{
+    grid-area : "nav-grid-area-1";
+    display: flex;
+}
+.nav-grid-area-1{
+    grid-area : "nav-grid-area-1";
+    display: flex;
+}
+.nav-grid-area-2{
+    grid-area : "nav-grid-area-2";
+    display: flex;
+}
+.nav-grid-area-3{
+    grid-area : "nav-grid-area-3";
+    display: flex;
+}
+.nav-grid-area-4{
+    grid-area : "nav-grid-area-4";
+    display: flex;
+}
+#nav-text{
+    margin: 2%;
+    font-weight: bold;
+}
