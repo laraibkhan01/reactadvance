@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CarCards from '../component/CarCards';
 import './ElectricCarCss.css'
+import InfiniteScroll from 'react-infinite-scroll-component';
 
-interface details{
-    name : "String",
-    speed : "String",
-    image : number,
-    Efficiency : "String",
-    Price : "String",
-    Rent : "String",
+interface details {
+    name: "String",
+    speed: "String",
+    image: number,
+    Efficiency: "String",
+    Price: "String",
+    Rent: "String",
 }
 
 const ElectricCars = () => {
-    const[details,setdetails] = useState(useSelector((state: any) => {
+
+    const [details, setdetails] = useState(useSelector((state: any) => {
         return state.container.cardetails;
     }));
 
-    
+    const [page, setPage] = useState(1);
     const [filtertype, setFiltertype] = useState("course-type")
 
 
@@ -46,6 +48,20 @@ const ElectricCars = () => {
         setFiltertype(selectedType)
     }
 
+    const debounce = (fn: Function, ms = 500) => {
+        let timeoutId: ReturnType<typeof setTimeout>;
+        return function (this: any, ...args: any[]) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => fn.apply(this, args), ms);
+        };
+    }
+    const [query1, setquery] = useState("");
+    const handleChange = (event: any) => {
+        const data = event.target.value.toUpperCase();
+        setquery(data);
+    }
+    // usecallback provides the memoized callback;
+    const optimisedversion = debounce(handleChange);
 
     return (
         <>
@@ -60,18 +76,16 @@ const ElectricCars = () => {
                 </div>
                 <div className="ElectricCar-Page-Search">
                     <input type="text"
-                        placeholder="Search by name"
-                        id="Seach-box"
+                        placeholder="Search by name."
+                        onChange={optimisedversion}
                     ></input>
                 </div>
             </div>
             <div className="ElectricCar-List">
                 {
-                    details.map((detail: any) => {
-                        return (
-                            <CarCards detail={detail} key = {detail.id} />
-                        )
-                    })
+                    details.map((detail: any) => (
+                        <CarCards detail={detail} query1={query1} key={detail.id} />
+                    ))
                 }
             </div>
         </>

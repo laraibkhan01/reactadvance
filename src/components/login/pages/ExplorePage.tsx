@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams , useHistory} from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCard } from '../actions/addCartActions';
 import imag from '../assets/car1.png'
@@ -7,6 +7,11 @@ import imag2 from '../assets/car2.png'
 import imag3 from '../assets/car3.png'
 import './ExplorePage.css'
 import { addCart } from '../actions/addCartActions'
+import StripeCheckout from 'react-stripe-checkout'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+toast.configure();
 
 interface ParamTypes {
     id: string;
@@ -23,13 +28,16 @@ export const ExplorePage = () => {
     }, [dispatch, id]);
 
     const dispatch2 = useDispatch();
-    const bookCar = (e: any) => {
-        e.preventDefault();
+    const bookCar = () => {
         const new_Car = ExploreCard;
         dispatch2(addCart(new_Car));
         history.push("/mybooking");
     }
 
+    const handleToken: any = (token: any, addresses: any) => {
+        console.log("Successful");
+        bookCar();
+    }
     return (
         <div className="ExplorePageWrapper">
             <div className="Car-Hardware">
@@ -77,8 +85,12 @@ export const ExplorePage = () => {
                     <input type="date" id="delivery" name="delivery"></input>
                 </div>
                 <div className="Book-Now-Box">
-                    <button type="submit" className="Explore-btn" onClick={(e: any) => bookCar(e)}>Add To Cart</button>
+                    <button type="submit" className="Explore-btn" >Add To Cart</button>
                 </div>
+                <StripeCheckout
+                    stripeKey="pk_test_51IRRYtIAFiVemvAqwXa9z29ATkZ6suw6dnPDKShlsEHUT7sFxE2mJSqW5auxuBFQgNB3Dt0xhvcpngHI2gqWXkE700zOu8yPx5"
+                    token={handleToken}
+                />
             </div>
         </div>
     )

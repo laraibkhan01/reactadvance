@@ -4,5 +4,6 @@ import rootReducer from '../reducer'
 //actions
 
 const carstore = createStore(rootReducer,composeWithDevTools());
+
 export default carstore;
 

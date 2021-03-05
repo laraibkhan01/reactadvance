@@ -3,8 +3,8 @@
     border: 1px solid #FF7BAC;
     box-shadow: 11px 12px 4px rgba(255, 123, 172, 0.46);
     width: max-content;
-    margin: 2%;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin : .5%;
 }
 
 #CarCard-Explore {

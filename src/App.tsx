@@ -8,7 +8,9 @@ function App(props: any) {
   return (
     <div className="App">
       {!props.authStatus ? (
-        <LoginForm {...props} />
+        <>
+            <LoginForm {...props} />
+        </>
       ) : (
         // <div>Hello {props.userName}</div>
         <Home/>
