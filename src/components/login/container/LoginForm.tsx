@@ -1,47 +1,46 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { LoginActionType, AuthenticationAction } from "../actions/LoginActions";
-import { Form, Button } from "react-bootstrap";
-
+import './LoginForm.css'
 const LoginForm = (props: any) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div className="login-form-container">
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+    <div className="login-form">
+      <div className = "container">
+        <div id="formBasicEmail">
+          <p>Email address</p>
+          <input
             type="email"
             placeholder="Enter email"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
-        </Form.Group>
+        </div>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+        <div id="formBasicPassword">
+          <p>Password</p>
+          <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
+        </div>
 
-        <Button
-          variant="primary"
+        <button
+          id = "kk"
           type="submit"
           onClick={(e) => {
             e.preventDefault();
-            //console.log("user details:", userName, password);
+           console.log("user details:", userName, password);
             props.initiateUserAuth(userName, password);
           }}
         >
           Submit
-        </Button>
-      </Form>
+        </button>
+      </div>
     </div>
   );
 };

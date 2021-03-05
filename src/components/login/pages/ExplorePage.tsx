@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCard } from '../actions/addCartActions';
@@ -26,17 +26,20 @@ export const ExplorePage = () => {
     useEffect(() => {
         dispatch(getCard(id));
     }, [dispatch, id]);
-
+    const [bookingdate, setbookingdate] = useState(ExploreCard.Availaible);
     const dispatch2 = useDispatch();
     const bookCar = () => {
-        const new_Car = ExploreCard;
+        let new_Car = ExploreCard;
+        new_Car = {...new_Car,"Available": bookingdate }
         dispatch2(addCart(new_Car));
+    }
+    const bookCar2 = () => {
         history.push("/mybooking");
     }
-
+    console.log(bookingdate);
     const handleToken: any = (token: any, addresses: any) => {
         console.log("Successful");
-        bookCar();
+        bookCar2();
     }
     return (
         <div className="ExplorePageWrapper">
@@ -46,12 +49,12 @@ export const ExplorePage = () => {
                 <div className="Car-info-1">
                     <div>
                         <p>Range</p>
-                        <p>120/miles</p>
+                        <p>{ExploreCard.Range}</p>
                         <p>Range</p>
                     </div>
                     <div>
                         <p>Charging</p>
-                        <p>50 kW</p>
+                        <p>{ExploreCard.Charging}</p>
                         <p>max. Speed</p>
                     </div>
                 </div>
@@ -82,7 +85,7 @@ export const ExplorePage = () => {
                 </div>
                 <div className="Delivery-date-box">
                     <label htmlFor="delivery">Date:</label>
-                    <input type="date" id="delivery" name="delivery"></input>
+                    <input type="date" id="delivery" name="delivery" onChange = {bookCar} value = {bookingdate}></input>
                 </div>
                 <div className="Book-Now-Box">
                     <button type="submit" className="Explore-btn" >Add To Cart</button>

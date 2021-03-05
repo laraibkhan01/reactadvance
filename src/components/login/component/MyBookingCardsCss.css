@@ -31,7 +31,15 @@
 .grid-area-4{
     grid-area: grid-area-4;   
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: palevioletred;
+    font-weight: bolder;
+}
+.grid-area-4-2{
+    display: flex;
     flex-direction: column;
     color: palevioletred;
     font-weight: bolder;
+    margin: 1%;
 }

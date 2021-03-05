@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import FormPage1 from '../../suitibilityPageFormPages/FormPage1'
-import FormPage2 from '../../suitibilityPageFormPages/FormPage2'
-import { FormPage4 } from '../../suitibilityPageFormPages/FormPage4'
-import { FormPage5 } from '../../suitibilityPageFormPages/FormPage5'
-import { FormPage6 } from '../../suitibilityPageFormPages/FormPage6'
-import { FormPage7 } from '../../suitibilityPageFormPages/FormPage7'
+import FormPage1 from '../suitibilityPageFormPages/FormPage1'
+import FormPage2 from '../suitibilityPageFormPages/FormPage2'
+import { FormPage4 } from '../suitibilityPageFormPages/FormPage4'
+import { FormPage5 } from '../suitibilityPageFormPages/FormPage5'
+import { FormPage6 } from '../suitibilityPageFormPages/FormPage6'
+import { FormPage7 } from '../suitibilityPageFormPages/FormPage7'
 
 const Suitibility = () => {
     let history = useHistory();

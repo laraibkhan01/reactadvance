@@ -6,6 +6,10 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin : .5%;
 }
+.CarCards-Wrapper :hover{
+    opacity: 0.9;
+    
+}
 
 #CarCard-Explore {
     background: #E5E5E5;

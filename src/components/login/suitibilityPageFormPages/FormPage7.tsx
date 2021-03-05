@@ -1,6 +1,6 @@
 import React from 'react'
 import './FormPagesCss.css'
-import lastP from '../login/assets/lastFormPage.png'
+import lastP from '../assets/lastFormPage.png'
 export const FormPage7 = () => {
     return (
         <div className = "last_page">

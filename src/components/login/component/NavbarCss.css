@@ -1,13 +1,27 @@
 .navbar-css{
     display: grid;
-    grid-template-columns: 2fr .5fr .5fr .5fr;
+    grid-template-columns: 2fr .5fr .5fr .5fr .2fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "nav-grid-area-1 nav-grid-area-2 nav-grid-area-3 nav-grid-area-4";
+    grid-template-areas: "nav-grid-area-1 nav-grid-area-2 nav-grid-area-3 nav-grid-area-4 nav-grid-area-5";
     justify-content: space-between;
     margin : .5%;
     background-color: #FFFFFF;
     align-items: center;
     box-shadow: 11px 12px 4px rgba(250, 223, 229, 0.25);
+}
+.nav-grid-area-5{
+    grid-area : nav-grid-area-5;
+}
+.nav-grid-area-5 :hover{
+    cursor: pointer;
+}
+#btn{
+    width: min-content;
+    height: min-content;
+    background-color: white;
+    border: .5px thick black;
+    color: black;
+    font-weight: bold;
 }
 .VmBtn1{
     text-decoration: none;
