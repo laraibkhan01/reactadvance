@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CarCards from '../component/CarCards';
 import './ElectricCarCss.css'
-import InfiniteScroll from 'react-infinite-scroll-component';
-
+import Pagination from '../container/Pagination'
 interface details {
     name: "String",
     speed: "String",
@@ -63,6 +62,15 @@ const ElectricCars = () => {
     // usecallback provides the memoized callback;
     const optimisedversion = debounce(handleChange);
 
+    //Pagination
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage, setPostPerPage] = useState(3);
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentCards = details.slice(indexOfFirstPost, indexOfLastPost);
+    const paginate = (pageNumber: any) => setCurrentPage(pageNumber);
+
     return (
         <>
             <div className="ElectricCar-Page-Wrapper">
@@ -83,11 +91,12 @@ const ElectricCars = () => {
             </div>
             <div className="ElectricCar-List">
                 {
-                    details.map((detail: any) => (
+                    currentCards.map((detail: any) => (
                         <CarCards detail={detail} query1={query1} key={detail.id} />
                     ))
                 }
             </div>
+            <Pagination postPerPage={postPerPage} totalPosts={details.length} paginate={paginate} />
         </>
     )
 }

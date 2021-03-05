@@ -11,7 +11,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "50 kW",
             "Range" : "135 miles",
-            "Availaible" : "18/12/2020",
+            "Availaible" : "18/12/2020"
         },
         {
             "id" : 2,
@@ -47,7 +47,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "76 kW",
             "Range" : "140 miles",
-            "Availaible " : "20/11/2020",
+            "Availaible " : "20/11/2020"
         },
         {
             "id" : 5,
@@ -59,7 +59,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "62 kW",
             "Range" : "130 miles",
-            "Availaible " : "19/01/2021",
+            "Availaible " : "19/01/2021"
         },
         {
             "id" : 6,
@@ -71,7 +71,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "50 kW",
             "Range" : "135 miles",
-            "Availaible " : "18/12/2020",
+            "Availaible " : "18/12/2020"
         },
         {
             "id" : 7,
@@ -83,7 +83,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "62 kW",
             "Range" : "130 miles",
-            "Availaible " : "19/01/2021",
+            "Availaible " : "19/01/2021"
         },
         {
             "id" : 8,
@@ -95,7 +95,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "76 kW",
             "Range" : "140 miles",
-            "Availaible " : "20/11/2020",
+            "Availaible " : "20/11/2020"
         },
         {
             "id" : 9,
@@ -107,7 +107,7 @@ const initialState = {
             "Rent" : "6 months",
             "Charging" : "50 kW",
             "Range" : "135 miles",
-            "Availaible " : "18/12/2020",
+            "Availaible " : "18/12/2020"
         },
         {
             "id" : 10,
@@ -119,7 +119,7 @@ const initialState = {
             "Rent" : "6 months",    
             "Charging" : "76 kW",
             "Range" : "140 miles",
-            "Availaible " : "20/11/2020",
+            "Availaible " : "20/11/2020"
         },
     ],
     carBooked :[
